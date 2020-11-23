@@ -1,14 +1,16 @@
-<p>Componente del participante</p>
+<div class="header">Componente del participante</div>
 <div class="external">
     <div class="internal">
       <form>
           <label for="participantId">Cédula</label>
-          <input type="text" maxlength="15" id="participantId" placeholder="Ingrese la cédula">
+          <input type="text" maxlength="15" [required]="true" id="participantId" 
+          name="participantId" [(ngModel)]="participantId" placeholder="Ingrese la cédula">
 
           <label for="file">Seleccione el archivo</label>
-          <input type="file" id="file" placeholder="Ingrese la cédula">
+          <input #inputFile type="file" id="file" [required]="true" (change)="handleFileInput($event.target.files)"
+           placeholder="Ingrese la cédula">
 
-          <input type="submit"  value="Enviar">
+          <input type="submit" (click)="save()"  value="Enviar">
 
       </form>
     </div>
@@ -23,7 +25,7 @@
                 <td>Cédula</td>
                 <td>Traza</td>
                 <td>Fecha de ejecución</td>
-                <td></td>
+                <td>Opciones</td>
             </tr>            
             <tr *ngFor="let participant of participants">
                 <td>{{participant.participantId}}</td>
@@ -31,7 +33,7 @@
                 <td>{{participant.createDate | date: 'dd/MM/yyyy  hh:mm' }}</td>
                 <td style="width: 10px;">
                     <div class="div-actions">
-                      <input class="input-download" type="submit" value="Descargar">
+                      <input class="input-download" (click)="download(participant.trace)" type="submit" value="Descargar">
                       <input class="input-delete" (click)="delete(participant)" type="submit" value="Eliminar">
                     </div>
                 </td>

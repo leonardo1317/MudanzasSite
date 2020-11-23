@@ -1,6 +1,6 @@
-html,body {
-    margin: 0;
-    padding: 0;
+::ng-deep * {
+  margin: 0;
+  padding: 0;
 }
 .external {
     /*background-color: red;*/
@@ -8,7 +8,9 @@ html,body {
     padding: 20px;
     text-align:center;
 }
+.header{
 
+}
 .internal {
     /*background-color: green;*/
     height: 100hv;

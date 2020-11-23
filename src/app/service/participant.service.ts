@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs';
-import { Participant } from '../domain/participant';
 
 @Injectable({
   providedIn: 'root'
@@ -16,11 +15,16 @@ export class ParticipantService {
     return this.httpClient.get(this.url);
   }
 
-  save(participant: Participant): Observable<any>{
-    return this.httpClient.post(this.url, participant);
+  save(participantId: string, file:File): Observable<any>{
+
+    const formData: FormData = new FormData();
+    formData.append('file', file);
+    formData.append('participantId', participantId);
+   
+    return this.httpClient.post(this.url, formData);
   }
 
-  delete(id: string): Observable<any>{
+  delete(id: number): Observable<any>{
     return this.httpClient.delete(this.url + `/${id}`);
   }
 }

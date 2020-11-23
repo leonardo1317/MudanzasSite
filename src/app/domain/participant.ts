@@ -1,5 +1,5 @@
 export class Participant {
-    constructor (public id: string,
+    constructor (public id: number,
     public participantId: string,
     public trace: string,
     public createDate: number
