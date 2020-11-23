@@ -3,16 +3,16 @@
 </div>
 <div class="external">
     <div class="internal">
-      <form ngNativeValidate>
+      <form [formGroup]="formGroup" (ngSubmit)="save(formGroup.value)">
           <label for="participantId">Cédula</label>
-          <input type="text" maxlength="15" required id="participantId" 
-          name="participantId" [(ngModel)]="participantId" placeholder="Ingrese la cédula">
-
-          <label for="file">Seleccione el archivo</label>
-          <input #inputFile type="file" id="file" required (change)="handleFileInput($event.target.files)"
+          <input type="text" formControlName='participantId'  maxlength="15"  id="participantId" 
            placeholder="Ingrese la cédula">
 
-          <input type="submit" (click)="save()"  value="Enviar">
+          <label for="file">Seleccione el archivo</label>
+          <input  type="file" formControlName='file' id="file"  (change)="handleFileInput($event.target.files)"
+           placeholder="Ingrese la cédula">
+
+          <input type="submit" value="Enviar">
 
       </form>
     </div>
