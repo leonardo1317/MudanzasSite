@@ -19,13 +19,21 @@ html,body {
   .internal-detail {
     /*background-color: green;*/
 
-    max-height: 400px;
+    max-height: 360px;
     height: 100hv;
     width: 80%;
     margin: 0 auto;
-    margin-top: 25px;
+    margin-top: 2px;
     overflow: scroll;
   }
+.header-detail{
+  width: 80%;
+  text-align: left;
+  margin: 0 auto;
+  margin-top: 25px;
+  border-bottom: 1px solid #ccc;
+}
+  
  
   form{
       /*background: blue;*/

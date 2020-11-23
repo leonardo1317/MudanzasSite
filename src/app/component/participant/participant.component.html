@@ -12,34 +12,30 @@
 
       </form>
     </div>
-
+    
+    <div class="header-detail" >
+        Resultados
+    </div>
     <div class="internal-detail">
-        <!--<form>
-            <label for="participantId">Cédula</label>
-            <input type="text" maxlength="15" id="participantId" placeholder="Ingrese la cédula">
-  
-            <label for="file">Seleccione el archivo</label>
-            <input type="file" id="file" placeholder="Ingrese la cédula">
-  
-            <input type="submit"  value="Enviar">
-  
-        </form>-->
+        
         <table>
             <tr>
                 <td>Cédula</td>
                 <td>Traza</td>
+                <td>Fecha de ejecución</td>
                 <td></td>
-            </tr>
-            <tr>
-                <td>leo</td>
-                <td>leo</td>
+            </tr>            
+            <tr *ngFor="let participant of participants">
+                <td>{{participant.participantId}}</td>
+                <td>{{participant.trace}}</td>
+                <td>{{participant.createDate | date: 'dd/MM/yyyy  hh:mm' }}</td>
                 <td style="width: 10px;">
                     <div class="div-actions">
                       <input class="input-download" type="submit" value="Descargar">
-                      <input class="input-delete" type="submit" value="Eliminar">
+                      <input class="input-delete" (click)="delete(participant)" type="submit" value="Eliminar">
                     </div>
                 </td>
-            </tr>    
+            </tr>
         </table>
       </div>
   </div>
