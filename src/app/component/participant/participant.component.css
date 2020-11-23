@@ -1,20 +1,32 @@
 html,body {
     margin: 0;
     padding: 0;
-  }
-.internal {
-    /*background-color: green;*/
-    height: 100hv;
-    width: 40%;
-    margin: 0 auto;/*esto fue lo que se agregó*/
-  }
-  .external {
+}
+.external {
     /*background-color: red;*/
     width: 100%;
     padding: 20px;
     text-align:center;
+}
+
+.internal {
+    /*background-color: green;*/
+    height: 100hv;
+    width: 40%;
+    margin: 0 auto;
   }
 
+  .internal-detail {
+    /*background-color: green;*/
+
+    max-height: 400px;
+    height: 100hv;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 25px;
+    overflow: scroll;
+  }
+ 
   form{
       /*background: blue;*/
       width: 100%;
@@ -51,4 +63,31 @@ html,body {
       background: #4A88F4;
       cursor: pointer;
   }
+
+ .div-actions{
+    display: flex;
+ }
+
+ .div-actions .input-download{
+    margin-right: 5px;
+    background: #059e05e5;
+    width: 80px;
+ }
+
+ .div-actions .input-delete{
+    background: #d14444e5;
+    width:80px;
+ }
+
+  table{
+    width:100%;
+      border: 1px solid #000;
+      border-collapse: collapse;
+  }
+
+  table td{
+    border:1px solid #ccc;
+    padding: 10px;
+  }
+
 

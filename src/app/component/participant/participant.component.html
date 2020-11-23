@@ -3,7 +3,7 @@
     <div class="internal">
       <form>
           <label for="participantId">Cédula</label>
-          <input type="text" id="participantId" placeholder="Ingrese la cédula">
+          <input type="text" maxlength="15" id="participantId" placeholder="Ingrese la cédula">
 
           <label for="file">Seleccione el archivo</label>
           <input type="file" id="file" placeholder="Ingrese la cédula">
@@ -12,4 +12,34 @@
 
       </form>
     </div>
+
+    <div class="internal-detail">
+        <!--<form>
+            <label for="participantId">Cédula</label>
+            <input type="text" maxlength="15" id="participantId" placeholder="Ingrese la cédula">
+  
+            <label for="file">Seleccione el archivo</label>
+            <input type="file" id="file" placeholder="Ingrese la cédula">
+  
+            <input type="submit"  value="Enviar">
+  
+        </form>-->
+        <table>
+            <tr>
+                <td>Cédula</td>
+                <td>Traza</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>leo</td>
+                <td>leo</td>
+                <td style="width: 10px;">
+                    <div class="div-actions">
+                      <input class="input-download" type="submit" value="Descargar">
+                      <input class="input-delete" type="submit" value="Eliminar">
+                    </div>
+                </td>
+            </tr>    
+        </table>
+      </div>
   </div>
