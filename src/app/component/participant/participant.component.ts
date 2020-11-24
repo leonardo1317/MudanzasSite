@@ -48,7 +48,8 @@ export class ParticipantComponent implements OnInit, OnDestroy {
         this.reset();
         this.findAll();
     }, err => {
-      console.log(err.error.error);
+      alert(err.error);
+      console.log(err.error);
     });
   }
 
@@ -57,6 +58,7 @@ export class ParticipantComponent implements OnInit, OnDestroy {
     this.participantService.delete(participant.id).subscribe(ok => {
       this.findAll();
     }, err => {
+      alert(err.error);
       console.log(err.error.error);
     });
   }
